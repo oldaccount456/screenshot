@@ -1,0 +1,8 @@
+body{
+    background-color: #20586f;
+    background-image: url(/bg.svg); 
+    width: 100%;
+    background-size: cover;
+    background-position: fill;
+    background-repeat: no-repeat;
+}
