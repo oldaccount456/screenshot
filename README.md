@@ -8,6 +8,9 @@
 
 - If you are running this locally, you will have to edit screenshotProvider.js and set executablePath to your local chrome executable. 
 
+- You can also test or use the production version of this code: https://screenshot.roanj.com / https://ss.roanj.com.
+
+
 
 ## Features
 
