@@ -37,7 +37,7 @@ export default async function view_screenshot(req, res) {
             const url = pattern.test(link) ? link : `https://${link}`
             const apiFunction = getApiByName(availableApis[0]);
             const imageBuffer = await apiFunction(url);   
-            res.setHeader('Content-Type', 'image/png');
+            res.setHeader('Content-Type', 'image/jpg');
             return res.send(imageBuffer);
         }
         catch(e){
