@@ -38,7 +38,7 @@ const apis = {
             });
             await page.close();
             await browser.close();
-            return Buffer.from(imageBuffer, 'binary').toString('base64');;
+            return Buffer.from(imageBuffer, 'binary');
         }
         catch(e){
             console.log(e);
@@ -66,7 +66,7 @@ const apis = {
             const response = await axios.get(screenshotApiLink, {
                 responseType: 'arraybuffer'
             })
-            const base64Image = Buffer.from(response.data, 'binary').toString('base64');
+            const base64Image = Buffer.from(response.data, 'binary');
             return base64Image;
         }
         catch(e){
