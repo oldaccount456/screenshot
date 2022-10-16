@@ -35,6 +35,7 @@ export default function ScreenshotDisplay(props){
                     <Image
                         alt={`Screenshot of ${props.webLink}`}
                         src={`data:image/png;base64,${props.imageData}`}
+                        onError={props.handleErrorLoading}
                         width={551.724137931}
                         height={329.741379309}
                     />

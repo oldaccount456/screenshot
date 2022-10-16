@@ -2,3 +2,9 @@
     margin-bottom:200px;
     color:white;
 }
+
+@media only screen and (max-width: 515px) {
+    #spinner{
+        margin-bottom: 50vw;
+    }
+}

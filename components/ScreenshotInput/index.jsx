@@ -66,13 +66,13 @@ export default class ScreenshotInput extends React.Component{
         e.preventDefault();
         try{
             this.props.setLoading();
-            const pattern = /^((http|https|):\/\/)/;
-            const screenshotReq = await Axios.post('/api/screenshot', {
-                'api': this.state.api,
-                'url': pattern.test(this.state.url) ? this.state.url : `https://${this.state.url}`
-            });
-            this.props.setImageData(screenshotReq.data.imageBuffer, this.state.url);
-            this.props.setLoading();
+            // const pattern = /^((http|https|):\/\/)/;
+            // const screenshotReq = await Axios.post('/api/screenshot', {
+            //     'api': this.state.api,
+            //     'url': pattern.test(this.state.url) ? this.state.url : `https://${this.state.url}`
+            // });
+            // this.props.setImageData(screenshotReq.data.imageBuffer, this.state.url);
+            // this.props.setLoading();
         }
         catch(err){
             console.log(err);
