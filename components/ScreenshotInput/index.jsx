@@ -16,8 +16,38 @@ export default class ScreenshotInput extends React.Component{
 
         this.state = {
             api: props.apis[0],
-            url: ''
+            url: '',
+            deviceSize: 'lg'
         }
+    }
+
+
+    checkWidth(){
+        console.log(window)
+        if(Number(window.innerWidth) <= 690){
+            this.setState({
+                deviceSize: 'sm'
+            });
+        }
+        else{
+            this.setState({
+                deviceSize: 'lg'
+            });
+        }
+    }
+
+    componentDidMount(){
+        if(Number(window.innerWidth) <= 690){
+            this.setState({
+                deviceSize: 'sm'
+            });
+        }
+        else{
+            this.setState({
+                deviceSize: 'lg'
+            });
+        }
+        window.addEventListener('resize', this.checkWidth.bind(this));
     }
 
     updateQuery(e){
@@ -36,7 +66,6 @@ export default class ScreenshotInput extends React.Component{
     async screenshot(e){
         e.preventDefault();
         try{
-            console.log('Setting loading')
             this.props.setLoading();
             const pattern = /^((http|https|):\/\/)/;
             const screenshotReq = await Axios.post('/api/screenshot', {
@@ -44,7 +73,6 @@ export default class ScreenshotInput extends React.Component{
                 'url': pattern.test(this.state.url) ? this.state.url : `https://${this.state.url}`
             });
             this.props.setImageData(screenshotReq.data.imageBuffer, this.state.url);
-            console.log('Disabling loads')
             this.props.setLoading();
         }
         catch(err){
@@ -59,9 +87,10 @@ export default class ScreenshotInput extends React.Component{
     }
 
     render(){
+        console.log(this.state.deviceSize)
         return (
             <>
-                <div id={styles['search-header']} className='container text-center d-flex justify-content-center'>Capture a website screenshot</div>
+                <div style={{marginTop: (this.state.deviceSize === 'lg' || (this.props.webLink !== '')) ? '100px': '0px'}}id={styles['search-header']} className='container text-center d-flex justify-content-center'>Capture a website screenshot</div>
                 <Form onSubmit={this.screenshot.bind(this)}>
                     <Container className='text-center d-flex justify-content-center'>
                         <Row className="justify-content-md-center">

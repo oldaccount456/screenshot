@@ -4,7 +4,7 @@
     font-weight: 600;
     font-size: 45px;
     line-height: 44px;
-    margin-top: 100px;
+
 }
 
 #search-label{
@@ -44,4 +44,10 @@
 
 #search-provider-choice{
     margin-top:10px;
+}
+
+@media only screen and (max-width: 427px) {
+    #search-btn{
+        margin-top:10px;
+    }
 }

@@ -7,6 +7,7 @@
 }
 
 #screenshot-image{
+    width: 67vw;
     margin-top: 20px;
 }
 
@@ -16,4 +17,30 @@
 
 #empty-space{
     margin-top: 400px;
+}
+
+#tablet-view{
+    display:none;
+}
+
+@media only screen and (max-width: 991px) {
+    #loader{
+        margin-top:28%;
+    }
+}
+
+@media only screen and (max-width: 810px) { 
+    #screenshot-image{
+        margin-top:4.5vw;
+
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    #desktop-view{
+        display:none;
+    }
+    #tablet-view{
+        display:block;
+    }
 }

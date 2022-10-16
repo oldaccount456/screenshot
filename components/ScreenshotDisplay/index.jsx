@@ -11,12 +11,22 @@ export default function ScreenshotDisplay(props){
     return (
         <div id={styles['screenshot-display']} className='container text-center d-flex justify-content-center'>
             <div id={styles['placeholder']}>
-                <Image 
-                    alt='PC Placeholder'
-                    src='/pc-placeholder.png'
-                    width={750.909090909}
-                    height={425.454545455}
-                />
+                <div id={styles['desktop-view']}>
+                    <Image 
+                        alt='PC Placeholder'
+                        src='/pc-placeholder.png'
+                        width={750.909090909}
+                        height={425.454545455}
+                    />
+                </div>
+                <div id={styles['tablet-view']}>
+                    <Image 
+                        alt='PC Placeholder'
+                        src='/pc-placeholder.png'
+                        width={750.909090909/1.05}
+                        height={425.454545455/1.05}
+                    />
+                </div>
             </div>
             {props.imageData !== '' ? (
                 props.loading ? 
