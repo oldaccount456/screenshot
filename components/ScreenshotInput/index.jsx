@@ -23,7 +23,6 @@ export default class ScreenshotInput extends React.Component{
 
 
     checkWidth(){
-        console.log(window)
         if(Number(window.innerWidth) <= 690){
             this.setState({
                 deviceSize: 'sm'
@@ -87,7 +86,6 @@ export default class ScreenshotInput extends React.Component{
     }
 
     render(){
-        console.log(this.state.deviceSize)
         return (
             <>
                 <div style={{marginTop: (this.state.deviceSize === 'lg' || (this.props.webLink !== '')) ? '100px': '0px'}}id={styles['search-header']} className='container text-center d-flex justify-content-center'>Capture a website screenshot</div>
